@@ -46,9 +46,9 @@ checkSpeed(
   {
     testFastCartesianProduct,
     testFastCartesian,
-    testCartesianProduct,
-    testCartesian,
-    testLodashProduct,
+    // testCartesianProduct,
+    // testCartesian,
+    // testLodashProduct,
   },
   {repeat: 1e2}
 )
