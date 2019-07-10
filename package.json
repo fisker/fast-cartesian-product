@@ -7,7 +7,7 @@
     "access": "public"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.5",
+    "@babel/core": "^7.5.4",
     "@babel/preset-env": "^7.4.5",
     "@commitlint/cli": "^8.0.0",
     "@fisker/commitlint-config": "^1.1.0",
