@@ -97,6 +97,7 @@ class FastCartesianProduct {
 
     let indexRemaining = index
 
+    // TODO: fix wrong direction loop
     for (let i = setsLength - 1; i >= 0; i -= 1) {
       const subSets = getIterableElementByIndex(this.sets, i)
       const length = getIterableLength(subSets)
@@ -132,15 +133,15 @@ class FastCartesianProduct {
   get size() {
     let size = 1
     const setsLength = getIterableLength(this.sets)
-    for (let i = 0; i < setsLength; i += 1) {
-      const subSets = getIterableElementByIndex(this.sets, i)
+
+    breakableForEach(this.sets, subSets) => {
       const length = getIterableLength(subSets)
       size *= length
       // eslint-disable-next-line no-restricted-globals
       if (!isFinite(size)) {
-        break
+        return false
       }
-    }
+    })
 
     return size
   }
