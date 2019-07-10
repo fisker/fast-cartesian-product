@@ -3,6 +3,8 @@ node_js:
   - "lts/*"
 sudo: false
 cache: yarn
+before_script:
+  - npm install --global yarn nyc
 script:
   - yarn lint
   - yarn build

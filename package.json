@@ -59,7 +59,7 @@
     "lint:markdown": "markdownlint \"**/*.md\" --ignore \"**/node_modules/**\"",
     "lint:prettier": "prettier \"**/*.{css,html,js,json,less,md,scss,ts,vue,yaml,yml}\" --check",
     "test": "ava",
-    "test-coverage": "ava --coverage",
+    "test-coverage": "nyc yarn test",
     "benchmarks": "node -r esm benchmarks/main.js"
   },
   "author": {
