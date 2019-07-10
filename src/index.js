@@ -26,12 +26,11 @@ function breakableForEach(iterable, iteratee) {
     return
   }
 
-
   const iterator = iterable[Symbol.iterator]()
 
   let index = 0
   let {value, done} = iterator.next()
-  while(!done) {
+  while (!done) {
     const shouldContinue = iteratee(value, index, iterable)
 
     if (shouldContinue === false) {
@@ -39,7 +38,7 @@ function breakableForEach(iterable, iteratee) {
     }
 
     ;({value, done} = iterator.next())
-    index ++
+    index += 1
   }
 }
 
@@ -72,7 +71,7 @@ function getIterableLength(iterable) {
 
   let length = 0
 
-  breakableForEach(iterable, () => length += 1)
+  breakableForEach(iterable, () => (length += 1))
 
   return length
 }
@@ -83,7 +82,7 @@ class FastCartesianProduct {
       throw new Error('sets should not be empty')
     }
 
-    breakableForEach(sets, (subsets) => {
+    breakableForEach(sets, subsets => {
       if (!isValidSet(subsets)) {
         throw new Error('sets should not have empty element')
       }
@@ -106,7 +105,6 @@ class FastCartesianProduct {
       indexRemaining /= length
       set[i] = getIterableElementByIndex(subSets, index)
     }
-
 
     return set
   }
@@ -138,6 +136,7 @@ class FastCartesianProduct {
       const subSets = getIterableElementByIndex(this.sets, i)
       const length = getIterableLength(subSets)
       size *= length
+      // eslint-disable-next-line no-restricted-globals
       if (!isFinite(size)) {
         break
       }
