@@ -16,14 +16,14 @@ class FastCartesianProduct {
 
     let j = index
 
-    for (let i = 0; i < setsLength; i+=1) {
+    for (let i = setsLength -1; i >= 0; i-=1) {
       const subSets = this.sets[i]
 
       const {length} = subSets
       const index = indexRemaining % length;
       indexRemaining -= index
       indexRemaining /= length
-      set[setsLength - i - 1] = subSets[index]
+      set[i] = subSets[index]
     }
 
     return set
