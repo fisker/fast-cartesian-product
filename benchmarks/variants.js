@@ -7,25 +7,25 @@
 // /  [[0, 1, 2, 3]] (1 dimension)
 //   [[0, 1], [0, 1]] (2 dimensions)
 //   [[0], [0], [0], [0]] (4 dimensions)
-const getVariants = function(length) {
-  const variantsA = Array.from({length}, (value, index) =>
-    getVariant(index, length)
-  )
-  return Object.fromEntries(variantsA)
-}
 
 const getVariant = function(index, length) {
   const dimensions = 2 ** index
   const unitLength = 2 ** (2 ** (length - index - 1))
-  const unit = Array.from({length: unitLength}, getIndex)
-  const arguments_ = Array.from({length: dimensions}, () => unit)
+  const unit = Array.from({length: unitLength}, (_, i) => i)
+  const sets = Array.from({length: dimensions}, () => unit)
   const title =
     dimensions === 1 ? `${dimensions} array` : `${dimensions} arrays`
-  return [title, arguments_]
+  return [title, sets]
 }
 
-const getIndex = function(value, index) {
-  return index
+const getVariants = function(length) {
+  const variantsA = Array.from({length}, (value, index) =>
+    getVariant(index, length)
+  )
+  return variantsA.reduce(
+    (object, [title, sets]) => Object.assign(object, {[title]: sets}),
+    {}
+  )
 }
 
 export const variants = getVariants(5)

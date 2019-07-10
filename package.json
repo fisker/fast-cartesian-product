@@ -60,7 +60,7 @@
     "lint:prettier": "prettier \"**/*.{css,html,js,json,less,md,scss,ts,vue,yaml,yml}\" --check",
     "test": "ava",
     "test-coverage": "ava --coverage",
-    "benchmarks": "rollup --config main.js && node .cache/benchmarks.js"
+    "benchmarks": "node -r esm benchmarks/main.js"
   },
   "author": {
     "name": "fisker Cheung",

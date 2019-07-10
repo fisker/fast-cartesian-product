@@ -23,7 +23,7 @@ const minify = [...commonPlugins, terser()]
 const moduleName = 'FastCartesianProduct'
 
 const builds = {
-  input: 'src/index.js',
+  input: 'src/core.js',
   output: [
     // umd build
     {

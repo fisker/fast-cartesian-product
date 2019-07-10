@@ -1,5 +1,5 @@
 // FROM https://raw.githubusercontent.com/ehmicky/fast-cartesian/master/benchmarks
-import 'regenerator-runtime'
+
 import checkSpeed from 'check-speed'
 import cartesianProduct from 'cartesian-product'
 import cartesian from 'cartesian'

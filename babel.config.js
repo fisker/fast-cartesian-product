@@ -5,7 +5,7 @@ module.exports = {
       {
         // debug: true,
         corejs: 3,
-        exclude: ['transform-typeof-symbol', 'transform-async-to-generator'],
+        exclude: ['transform-typeof-symbol'],
         // useBuiltIns: 'usage',
         modules: false,
       },
