@@ -51,6 +51,18 @@ test('supports `Set`', t => {
   )
 })
 
+test('supports `ArrayLike`', t => {
+  ;(function() {
+    // eslint-disable-next-line prefer-rest-params
+    const combinations = product(arguments)
+    const result = [[0, 0], [0, 1], [1, 0], [1, 1]]
+    t.deepEqual(
+      Array.from(combinations).map(combination => Array.from(combination)),
+      result
+    )
+  })(new Set([new Set([0, 1]), new Set([0, 1])]))
+})
+
 test('infinity products', t => {
   const element = Array.from({length: 10}, (_, i) => i)
   const combinations = product(Array.from({length: 1024}, () => element))
