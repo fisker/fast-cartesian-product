@@ -41,7 +41,7 @@ function each(iterable, iteratee) {
     return iterableEach(iterable, iteratee)
   }
 
-  /* istanbul ignore if  */
+  /* istanbul ignore else  */
   if (isArrayLike(iterable)) {
     return forEach(iterable, iteratee)
   }
