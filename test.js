@@ -43,8 +43,8 @@ test('empty check', t => {
 })
 
 test('supports `Set`', t => {
-  const combinations = product(new Set([new Set([0, 1]), new Set([0, 1])]))
-  const result = [[0, 0], [0, 1], [1, 0], [1, 1]]
+  const combinations = product(new Set([new Set([0])]))
+  const result = [[0]]
   t.deepEqual(
     Array.from(combinations).map(combination => Array.from(combination)),
     result
@@ -60,7 +60,7 @@ test('supports `ArrayLike`', t => {
     length: 1,
     0: elements,
   })
-  t.is([...combinations].join('|'), '0,0|0,1|1,0|1,1')
+  t.deepEqual([...combinations], [[0]])
 })
 
 test('supports `Iterable`', t => {
