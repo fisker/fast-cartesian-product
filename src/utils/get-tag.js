@@ -1,7 +1,7 @@
 const {toString} = Object.prototype
 
-function getType(object) {
+function getTag(object) {
   return toString.call(object).slice(8, -1)
 }
 
-export default getType
+export default getTag

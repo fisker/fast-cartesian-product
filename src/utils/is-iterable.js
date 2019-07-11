@@ -1,28 +1,16 @@
-import hasLength from './has-length'
-import getType from './get-type'
+import SYMBOL_ITERATOR from './symbol-iterator'
+import isArrayLike from './is-array-like'
+import isSet from './is-set'
 import isFunction from './is-function'
+import isValue from './is-value'
 
-function isIterable(object) {
-  if (!object || isFunction(object)) {
-    return false
-  }
-
-  const type = getType(object)
-
-  if (type === 'Null' || type === 'Undefined' || type === 'Number') {
-    return false
-  }
-
-  if (hasLength(object)) {
+function isIterable(value) {
+  if (
+    isValue(value) &&
+    (isFunction(value[SYMBOL_ITERATOR]) || isArrayLike(value) || isSet(value))
+  ) {
     return true
   }
-
-  try {
-    const iterator = object[Symbol.iterator]()
-    if (iterator && iterator.next && isFunction(iterator.next)) {
-      return true
-    }
-  } catch (_) {}
 
   return false
 }

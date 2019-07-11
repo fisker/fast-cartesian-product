@@ -1,8 +1,10 @@
 import test from 'ava'
-import FastCartesianProduct from './src/core'
+import FastCartesianProduct from './src'
+
+const product = sets => new FastCartesianProduct(sets)
 
 test('main', t => {
-  const combinations = new FastCartesianProduct([[0, 1], ['A', 'B']])
+  const combinations = product([[0, 1], ['A', 'B']])
   const result = [[0, 'A'], [0, 'B'], [1, 'A'], [1, 'B']]
 
   t.deepEqual(Array.from(combinations).join(), result.join())
@@ -19,21 +21,21 @@ test('main', t => {
 test('empty check', t => {
   t.throws(
     () => {
-      new FastCartesianProduct(() => {})
+      product(() => {})
     },
     TypeError,
     '`sets` should be `Iterable`'
   )
   t.throws(
     () => {
-      new FastCartesianProduct([() => {}])
+      product([() => {}])
     },
     TypeError,
     'elements in `sets` should be `Iterable`'
   )
   t.throws(
     () => {
-      new FastCartesianProduct([[]])
+      product([[]])
     },
     Error,
     '`sets` should not have empty elements'
@@ -41,9 +43,7 @@ test('empty check', t => {
 })
 
 test('supports `Set`', t => {
-  const combinations = new FastCartesianProduct(
-    new Set([new Set([0, 1]), new Set([0, 1])])
-  )
+  const combinations = product(new Set([new Set([0, 1]), new Set([0, 1])]))
   const result = [[0, 0], [0, 1], [1, 0], [1, 1]]
   t.deepEqual(
     Array.from(combinations).map(combination => Array.from(combination)),
@@ -53,9 +53,7 @@ test('supports `Set`', t => {
 
 test('infinity products', t => {
   const element = Array.from({length: 10}, (_, i) => i)
-  const combinations = new FastCartesianProduct(
-    Array.from({length: 1024}, () => element)
-  )
+  const combinations = product(Array.from({length: 1024}, () => element))
 
   // yes, we can access index over max Array length
   const MAX_ARRAY_LENGTH = 2 ** 32 - 1

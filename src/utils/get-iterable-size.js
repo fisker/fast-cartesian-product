@@ -1,19 +1,19 @@
-import hasLength from './has-length'
-import forEach from './for-each'
+import isArrayLike from './is-array-like'
+import isSet from './is-set'
+import each from './each'
 
 function getIterableSize(iterable) {
-  if (hasLength(iterable)) {
+  if (isArrayLike(iterable)) {
     return iterable.length
   }
 
-  // Set#size
-  if ('size' in iterable) {
+  if (isSet(iterable)) {
     return iterable.size
   }
 
   let size = 0
 
-  forEach(iterable, (_, index) => (size += 1))
+  each(iterable, () => (size += 1))
 
   return size
 }

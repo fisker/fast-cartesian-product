@@ -1,7 +1,8 @@
+import SYMBOL_ITERATOR from './utils/symbol-iterator'
 import isFinite from './utils/is-finite'
-import forEach from './utils/for-each'
+import each from './utils/each'
 import getIterableSize from './utils/get-iterable-size'
-import getIterableElement from './utils/get-iterable-element-by-index'
+import getIterableElement from './utils/get-iterable-element'
 import isIterable from './utils/is-iterable'
 
 class FastCartesianProduct {
@@ -10,7 +11,7 @@ class FastCartesianProduct {
       throw new TypeError('`sets` should be `Iterable`')
     }
 
-    forEach(sets, elements => {
+    each(sets, elements => {
       if (!isIterable(elements)) {
         throw new TypeError('elements in `sets` should be `Iterable`')
       }
@@ -26,6 +27,8 @@ class FastCartesianProduct {
   get(index) {
     const setsSize = getIterableSize(this.sets)
     const combination = new Array(setsSize)
+
+    // TODO: add cache
 
     let indexRemaining = index
 
@@ -45,7 +48,7 @@ class FastCartesianProduct {
     return combination
   }
 
-  [Symbol.iterator]() {
+  [SYMBOL_ITERATOR]() {
     const instance = this
     const {size} = instance
     let index = 0
@@ -68,7 +71,7 @@ class FastCartesianProduct {
   get size() {
     let size = 1
 
-    forEach(this.sets, elements => {
+    each(this.sets, elements => {
       const elementsSize = getIterableSize(elements)
       size *= elementsSize
       // eslint-disable-next-line no-restricted-globals
@@ -80,5 +83,7 @@ class FastCartesianProduct {
     return size
   }
 }
+
+FastCartesianProduct.SYMBOL_ITERATOR = SYMBOL_ITERATOR
 
 export default FastCartesianProduct

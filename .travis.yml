@@ -9,7 +9,7 @@ script:
   - yarn lint
   - yarn build
   - yarn test-coverage
-  - yarn benchmarks
+  # - yarn benchmarks
 after_script:
   - npm install --global codecov coveralls codacy-coverage
   - cat ./coverage/lcov.info | coveralls
