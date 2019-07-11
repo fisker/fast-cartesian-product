@@ -52,10 +52,15 @@ test('supports `Set`', t => {
 })
 
 test('supports `ArrayLike`', t => {
+  const elements = {
+    length: 2,
+    0: 0,
+    1: 1,
+  }
   const combinations = product({
     length: 2,
-    0: [0, 1],
-    1: [0, 1],
+    0: elements,
+    1: elements,
   })
   t.is([...combinations].join('|'), '0,0|0,1|1,0|1,1')
 })
