@@ -25,6 +25,17 @@ node -r esm examples/any-iterable-type.js
 node -r esm examples/big-combinations.js
 ```
 
+## Files
+
+```text
+lib/
+├─ index.common.js  ( CommonJS )
+├─ index.js         ( UMD )
+├─ index.min.js     ( UMD, compressed )
+├─ index.mjs        ( ES Module )
+└─ index.min.mjs    ( ES Module, compressed )
+```
+
 ## API
 
 ### combinations = new FastCartesionProduct(sets)

@@ -3,6 +3,10 @@
   "description": "cheap and fast cartesian-product",
   "version": "0.0.0",
   "main": "lib/index.js",
+  "module": "lib/index.mjs",
+  "browser": "lib/index.min.js",
+  "unpkg": "lib/index.min.js",
+  "jsdelivr": "lib/index.min.js",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
     "access": "public"
@@ -49,6 +53,9 @@
       "path": "./node_modules/cz-conventional-changelog-emoji"
     }
   },
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "dist": "run-p dist:*",
     "dist:npm": "np --yolo --no-yarn",
