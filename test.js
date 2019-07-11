@@ -55,9 +55,14 @@ test('supports `ArrayLike`', t => {
   ;(function() {
     // eslint-disable-next-line prefer-rest-params
     const combinations = product(arguments)
-    const result = [[0, 0], [0, 1], [1, 0], [1, 1]]
-    t.deepEqual(Array.from(combinations), result)
+    t.is([...combinations].join('|'), '0,0|0,1|1,0|1,1')
   })([0, 1], [0, 1])
+})
+
+test('supports `Iterable`', t => {
+  const iterable = product([[0, 1]])
+  const combinations = product([iterable, iterable])
+  t.is([...combinations].join('|'), '0,0|0,1|1,0|1,1')
 })
 
 test('infinity products', t => {
