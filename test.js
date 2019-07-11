@@ -53,16 +53,17 @@ test('supports `Set`', t => {
 
 test('supports `ArrayLike`', t => {
   const elements = {
-    length: 2,
+    length: 3,
     0: 0,
     1: 1,
+    2: 2,
   }
   const combinations = product({
     length: 2,
     0: elements,
     1: elements,
   })
-  t.is([...combinations].join('|'), '0,0|0,1|1,0|1,1')
+  t.is([...combinations].join('|'), '0,0|0,1|0,2|1,0|1,1|1,2|2,0|2,1|2,2')
 })
 
 test('supports `Iterable`', t => {
