@@ -72,7 +72,7 @@
     "test-coverage": "nyc yarn test",
     "benchmarks": "node -r esm benchmarks/main.js",
     "clean": "rimraf lib",
-    "release": "run-s clean build lint test dist"
+    "release": "run-s clean build format test dist"
   },
   "author": {
     "name": "fisker Cheung",
