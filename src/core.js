@@ -21,6 +21,7 @@ class FastCartesianProduct {
       }
     })
 
+    // TODO: use private field
     this.sets = sets
   }
 
@@ -84,6 +85,8 @@ class FastCartesianProduct {
   }
 }
 
+// TODO: use class static propertie
+// rollup-plugin-babel can't use proposal-class-properties
 FastCartesianProduct.SYMBOL_ITERATOR = SYMBOL_ITERATOR
 
 export default FastCartesianProduct
