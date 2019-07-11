@@ -1,7 +1,8 @@
 {
   "name": "fast-cartesian-product",
+  "description": "cheap and fast cartesian-product",
   "version": "0.0.0",
-  "main": "index.js",
+  "main": "lib/index.js",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
     "access": "public"
@@ -38,7 +39,8 @@
     "rollup-plugin-filesize": "^6.1.1",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-prettier": "^0.6.0",
-    "rollup-plugin-terser": "^5.1.1"
+    "rollup-plugin-terser": "^5.1.1",
+    "table": "5.4.1"
   },
   "license": "MIT",
   "config": {

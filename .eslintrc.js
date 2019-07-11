@@ -18,7 +18,7 @@ module.exports = {
   globals: {},
   overrides: [
     {
-      files: ['benchmarks/*'],
+      files: ['benchmarks/*', 'examples/*'],
       rules: {
         'import/no-extraneous-dependencies': 'off',
       },
