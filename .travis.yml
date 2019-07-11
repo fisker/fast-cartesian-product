@@ -11,7 +11,5 @@ script:
   - yarn test-coverage
   # - yarn benchmarks
 after_script:
-  - npm install --global codecov coveralls codacy-coverage
-  - cat ./coverage/lcov.info | coveralls
-  - cat ./coverage/lcov.info | codecov
-  - cat ./coverage/lcov.info | codacy-coverage
+  - npm install --global coveralls
+  - nyc report --reporter=text-lcov | coveralls
