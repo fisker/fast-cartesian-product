@@ -52,11 +52,12 @@ test('supports `Set`', t => {
 })
 
 test('supports `ArrayLike`', t => {
-  ;(function() {
-    // eslint-disable-next-line prefer-rest-params
-    const combinations = product(arguments)
-    t.is([...combinations].join('|'), '0,0|0,1|1,0|1,1')
-  })([0, 1], [0, 1])
+  const combinations = product({
+    length: 2,
+    0: [0, 1],
+    1: [0, 1],
+  })
+  t.is([...combinations].join('|'), '0,0|0,1|1,0|1,1')
 })
 
 test('supports `Iterable`', t => {
