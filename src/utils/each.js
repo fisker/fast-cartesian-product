@@ -28,6 +28,7 @@ function forEach(iterable, iteratee) {
   for (let index = 0; index < length; index += 1) {
     const shouldContinue = iteratee(iterable[index], index, iterable)
 
+    /* istanbul ignore if  */
     if (shouldContinue === false) {
       break
     }
