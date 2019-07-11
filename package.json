@@ -33,6 +33,7 @@
     "markdownlint-cli": "^0.17.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^1.18.2",
+    "rimraf": "2.6.3",
     "rollup": "^1.16.7",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-commonjs": "^10.0.1",
@@ -62,7 +63,9 @@
     "lint:prettier": "prettier \"**/*.{css,html,js,json,less,md,scss,ts,vue,yaml,yml}\" --check",
     "test": "ava",
     "test-coverage": "nyc yarn test",
-    "benchmarks": "node -r esm benchmarks/main.js"
+    "benchmarks": "node -r esm benchmarks/main.js",
+    "clean": "rimraf lib",
+    "release": "run-s clean build lint test dist"
   },
   "author": {
     "name": "fisker Cheung",
