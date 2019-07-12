@@ -93,3 +93,4 @@ typings/
 
 # project ignore files
 /lib
+/yarn.lock
