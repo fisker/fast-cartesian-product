@@ -85,7 +85,7 @@ class FastCartesianProduct {
   }
 }
 
-// TODO: use class static propertie
+// TODO: use class static property
 // rollup-plugin-babel can't use proposal-class-properties
 FastCartesianProduct.SYMBOL_ITERATOR = SYMBOL_ITERATOR
 
