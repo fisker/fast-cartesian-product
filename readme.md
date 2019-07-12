@@ -116,3 +116,7 @@ if you are not sure, you can always use `combinations[FastCartesionProduct.SYMBO
 var iterator = combinations[FastCartesionProduct.SYMBOL_ITERATOR]()
 iterator.next() // {value: [0, 1], done: false}
 ```
+
+## Todo
+
+[ ] BigInt of size

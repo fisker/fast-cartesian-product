@@ -7,6 +7,8 @@
   "browser": "lib/index.min.js",
   "unpkg": "lib/index.min.js",
   "jsdelivr": "lib/index.min.js",
+  "repository": "fisker/fast-cartesian-product",
+  "homepage": "https://github.com/fisker/fast-cartesian-product#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
     "access": "public"
