@@ -75,7 +75,6 @@ class FastCartesianProduct {
     each(this.sets, elements => {
       const elementsSize = getIterableSize(elements)
       size *= elementsSize
-      // eslint-disable-next-line no-restricted-globals
       if (!isFinite(size)) {
         return false
       }

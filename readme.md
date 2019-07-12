@@ -20,7 +20,7 @@ more examples
 git clone https://github.com/fisker/fast-cartesian-product.git
 cd fast-cartesian-product
 yarn
-node -r esm standard-52-card-deck.js
+node -r esm examples/standard-52-card-deck.js
 node -r esm examples/any-iterable-type.js
 node -r esm examples/big-combinations.js
 ```
