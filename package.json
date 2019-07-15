@@ -17,7 +17,7 @@
     "@babel/core": "7.5.4",
     "@babel/plugin-proposal-class-properties": "7.5.0",
     "@babel/preset-env": "7.5.4",
-    "@commitlint/cli": "8.0.0",
+    "@commitlint/cli": "8.1.0",
     "@fisker/commitlint-config": "1.1.0",
     "@fisker/eslint-config": "1.2.6",
     "@fisker/husky-config": "1.1.0",
