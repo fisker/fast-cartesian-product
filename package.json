@@ -24,7 +24,7 @@
     "@fisker/lint-staged-config": "1.0.5",
     "@fisker/prettier-config": "1.0.18",
     "ava": "2.2.0",
-    "cz-conventional-changelog-emoji": "0.1.0",
+    "cz-conventional-changelog": "3.0.2",
     "eslint": "6.1.0",
     "eslint-config-fisker": "4.5.0",
     "esm": "3.2.25",
@@ -45,17 +45,18 @@
   "license": "MIT",
   "config": {
     "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog-emoji"
+      "path": "./node_modules/cz-conventional-changelog"
     }
   },
   "files": [
     "lib"
   ],
   "scripts": {
-    "dist": "run-p dist:*",
-    "dist:npm": "np --yolo --no-yarn",
     "build": "run-p build:*",
     "build:js": "rollup --config",
+    "clean": "rimraf lib",
+    "dist": "run-p dist:*",
+    "dist:npm": "np --yolo --no-yarn",
     "format": "run-p format:*",
     "format:eslint": "yarn lint:eslint --fix",
     "format:prettier": "prettier \"**/*.{css,html,js,json,less,md,scss,ts,vue,yaml,yml}\" --write",
@@ -63,10 +64,9 @@
     "lint:eslint": "eslint \"**/*.{js,mjs,vue}\"",
     "lint:markdown": "markdownlint \"**/*.md\" --ignore \"**/node_modules/**\"",
     "lint:prettier": "prettier \"**/*.{css,html,js,json,less,md,scss,ts,vue,yaml,yml}\" --check",
+    "release": "run-s clean build format test dist",
     "test": "ava",
-    "test-coverage": "nyc yarn test",
-    "clean": "rimraf lib",
-    "release": "run-s clean build format test dist"
+    "test-coverage": "nyc yarn test"
   },
   "author": {
     "name": "fisker Cheung",

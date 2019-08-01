@@ -1,6 +1,6 @@
 # ignore file for git project
 #
-# update: wget -O .gitignore https://git.io/fjVjD
+# update: wget -O .gitignore https://git.io/fjXI5
 #
 
 # Base on https://www.gitignore.io/api/node
@@ -13,6 +13,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
+yarn.lock
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
@@ -93,4 +94,3 @@ typings/
 
 # project ignore files
 /lib
-/yarn.lock
