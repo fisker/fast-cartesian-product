@@ -2,7 +2,7 @@
 
 > super fast cartesian product
 
-before `v0.2.0` this module was not focusing on speed, now it's split into to two modules:
+before `v1.0.0` this module was not focusing on speed, now it's split into to two modules:
 
 - [`fast-cartesian-product`](https://github.com/fisker/fast-cartesian-product)
 
