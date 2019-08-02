@@ -20,10 +20,10 @@ const plugins = [
 
 const minify = [...commonPlugins, terser()]
 
-const moduleName = 'FastCartesianProduct'
+const moduleName = 'fastCartesianProduct'
 
 const builds = {
-  input: 'src/core.js',
+  input: 'src/index.js',
   output: [
     // umd build
     {
