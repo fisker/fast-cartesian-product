@@ -2,7 +2,7 @@
 
 > super fast cartesian product
 
-this module before `0.2.0` was not focusing on speed, now it's split into to two modules:
+before `v0.2.0` this module was not focusing on speed, now it's split into to two modules:
 
 - [`fast-cartesian-product`](https://github.com/fisker/fast-cartesian-product)
 
@@ -19,9 +19,8 @@ import fastCartesianProduct from 'fast-cartesian-product'
 
 const inputs = [[0, 1], ['A', 'B']]
 
-for (const combination of new fastCartesianProduct(inputs)) {
-  console.log(combination)
-}
+console.log(fastCartesianProduct(inputs))
+// [ [ 0, 'A' ], [ 0, 'B' ], [ 1, 'A' ], [ 1, 'B' ] ]
 ```
 
 more examples
