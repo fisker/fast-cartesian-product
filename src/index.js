@@ -1,7 +1,7 @@
 function fastCartesianProduct(sets) {
   const {length: setsSize} = sets
   let done = setsSize === 0
-  const all = []
+  const combinations = []
   let index = 0
   while (!done) {
     const combination = new Array(setsSize)
@@ -28,10 +28,10 @@ function fastCartesianProduct(sets) {
       }
     }
 
-    index = all.push(combination)
+    index = combinations.push(combination)
   }
 
-  return all
+  return combinations
 }
 
 export default fastCartesianProduct
