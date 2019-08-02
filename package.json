@@ -1,6 +1,6 @@
 {
   "name": "fast-cartesian-product",
-  "description": "cheap and fast cartesian-product",
+  "description": "fast cartesian product",
   "version": "1.0.0",
   "main": "lib/index.js",
   "module": "lib/index.mjs",
@@ -13,6 +13,12 @@
     "registry": "https://registry.npmjs.org/",
     "access": "public"
   },
+  "keywords": [
+    "cartesian",
+    "product",
+    "cartesian-product",
+    "sku"
+  ],
   "devDependencies": {
     "@babel/core": "7.5.5",
     "@babel/plugin-proposal-class-properties": "7.5.5",
