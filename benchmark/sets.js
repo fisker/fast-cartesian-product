@@ -2,7 +2,7 @@ const array = [
   makeArray(2 ** 8, 1),
   makeArray(1, 2 ** 8),
   makeArray(4, 8),
-  makeArray(8, 8),
+  makeArray(8, 4),
   makeArray(2, 16),
   makeArray(16, 2),
   makeArray(5),
