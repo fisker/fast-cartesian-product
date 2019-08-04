@@ -6,18 +6,27 @@ import arrays from './sets'
 
 const directory = path.join(__dirname, '../src/algorithms')
 const files = fs.readdirSync(directory)
-const maxAlgorithmNamesLength = Math.max(...files.map(({length}) => length)) - 3
-const algorithmNames = files.map(file => {
-  const basename = path.basename(file, '.js')
-  const name = basename
-    .replace(/-/g, ' ')
-    .replace(/(^.)|\s./g, $0 => $0.toUpperCase())
-  return `[ ${name.padEnd(maxAlgorithmNamesLength)} ]`
-})
-const algorithms = files
-  .map(file => path.join(directory, file))
-  .map(file => require(file).default)
-const options = {minSamples: 100}
+
+const algorithms = [
+  ...files.map(file => {
+    const name = path
+      .basename(file, '.js')
+      .replace(/-/g, ' ')
+      .replace(/(^.)|\s./g, $0 => $0.toUpperCase())
+
+    return {
+      name,
+      fn: require(path.join(directory, file)).default,
+    }
+  }),
+]
+
+function alignAlgorithmNames(name) {
+  const maxLength = Math.max(...algorithms.map(({name: {length}}) => length))
+  return `[ ${name.padEnd(maxLength)} ]`
+}
+
+const benchmarkOptions = {minSamples: 100}
 
 for (const {title, sets} of arrays) {
   console.log()
@@ -25,8 +34,8 @@ for (const {title, sets} of arrays) {
   console.log()
   algorithms
     .reduce(
-      (suite, algorithm, index) =>
-        suite.add(algorithmNames[index], () => algorithm(sets), options),
+      (suite, {name, fn}) =>
+        suite.add(alignAlgorithmNames(name), () => fn(sets), benchmarkOptions),
       new Benchmark.Suite()
     )
     .on('cycle', ({target}) => {
