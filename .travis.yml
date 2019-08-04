@@ -8,8 +8,8 @@ before_script:
 script:
   - yarn lint
   - yarn build
-  - yarn benchmark
   - yarn test-coverage
 after_script:
   - npm install --global coveralls
   - cat ./coverage/lcov.info | coveralls
+  - yarn benchmark
