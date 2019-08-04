@@ -9,19 +9,22 @@ function fastCartesianProduct(sets) {
     let indexRemaining = index
     done = true
 
-    for (let setsIndex = 0; setsIndex < setsSize; setsIndex += 1) {
-      const combinationIndex = setsSize - setsIndex - 1
-      const elements = sets[combinationIndex]
+    for (let setsIndex = setsSize - 1; setsIndex >= 0; setsIndex -= 1) {
+      const elements = sets[setsIndex]
       const {length: elementsSize} = elements
 
       if (elementsSize === 0) {
         throw new TypeError('`sets` should not has empty elements')
       }
 
-      const elementsIndex = indexRemaining % elementsSize
-      indexRemaining -= elementsIndex
-      indexRemaining /= elementsSize
-      combination[combinationIndex] = elements[elementsIndex]
+      let elementsIndex = 0
+
+      if (indexRemaining !== 0) {
+        elementsIndex = indexRemaining % elementsSize
+        indexRemaining = (indexRemaining - elementsIndex) / elementsSize
+      }
+
+      combination[setsIndex] = elements[elementsIndex]
 
       if (done && elementsIndex !== elementsSize - 1) {
         done = false
