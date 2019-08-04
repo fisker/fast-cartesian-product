@@ -5,17 +5,28 @@ const array = [
   makeArray(8, 8),
   makeArray(2, 16),
   makeArray(16, 2),
-  makeArray(random(2, 8), random(2, 8)),
-  makeArray(random(2, 8), random(2, 8)),
-  makeArray(random(2, 8), random(2, 8)),
-  makeArray(random(2, 8), random(2, 8)),
+  makeArray(5),
 ]
 
 function random(low, high) {
-  return low + Math.floor(Math.random(high - low))
+  return low + Math.floor(Math.random() * (high - low))
 }
 
-function makeArray(width, height) {
+function makeArray(width, height = 'random') {
+  if (height === 'random') {
+    const sets = Array.from({length: width}, () =>
+      Array.from({length: random(2, 10)}, fillArray)
+    )
+    const title = `sets with random length: [${sets
+      .map(({length}) => length)
+      .join(', ')}]`
+
+    return {
+      title,
+      sets,
+    }
+  }
+
   return {
     title: `sets: ${width}x${height}`,
     sets: Array.from({length: width}, () =>
