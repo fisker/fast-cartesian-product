@@ -1,8 +1,8 @@
 language: node_js
 node_js:
   - "lts/*"
-sudo: false
-cache: yarn
+cache:
+  yarn: true
 before_script:
   - npm install --global yarn nyc
 script:
