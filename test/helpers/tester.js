@@ -1,7 +1,6 @@
 import test from 'ava'
-import fastCartesianProduct from './src'
 
-const tests = [
+const cases = [
   {
     input: [],
     expected: [],
@@ -46,20 +45,20 @@ const tests = [
       [3, 3],
     ],
   },
+  {
+    input: [[]],
+    throws: new Error('`sets` should not has empty elements'),
+  },
 ]
 
-for (const {input, expected} of tests) {
-  test(JSON.stringify(input), t => {
-    t.deepEqual(fastCartesianProduct(input), expected)
-  })
+function tester(t, module_) {
+  for (const {input, expected, throws} of cases) {
+    if (throws) {
+      t.throws(() => module_(input), throws.constructor, throws.message)
+    } else {
+      t.deepEqual(module_(input), expected, JSON.stringify(input))
+    }
+  }
 }
 
-test('empty array', t => {
-  t.throws(
-    () => {
-      fastCartesianProduct([[]])
-    },
-    Error,
-    '`sets` should not has empty elements'
-  )
-})
+export default tester

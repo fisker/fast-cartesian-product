@@ -30,6 +30,7 @@
     "@fisker/lint-staged-config": "1.0.5",
     "@fisker/prettier-config": "1.0.18",
     "ava": "2.2.0",
+    "babel-eslint": "10.0.2",
     "cz-conventional-changelog": "3.0.2",
     "eslint": "6.1.0",
     "eslint-config-fisker": "4.5.0",
@@ -86,6 +87,9 @@
   },
   "ava": {
     "verbose": true,
-    "require": "esm"
+    "require": "esm",
+    "helpers": [
+      "test/helpers/**"
+    ]
   }
 }
