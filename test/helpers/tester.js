@@ -1,5 +1,3 @@
-import test from 'ava'
-
 const cases = [
   {
     input: [],
