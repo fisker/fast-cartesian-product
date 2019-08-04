@@ -31,6 +31,7 @@
     "@fisker/prettier-config": "1.0.18",
     "ava": "2.2.0",
     "babel-eslint": "10.0.2",
+    "benchmark": "2.1.4",
     "cz-conventional-changelog": "3.0.2",
     "eslint": "6.1.0",
     "eslint-config-fisker": "4.5.0",
@@ -74,7 +75,8 @@
     "lint:prettier": "prettier \"**/*.{css,html,js,json,less,md,scss,ts,vue,yaml,yml}\" --check",
     "release": "run-s clean build format test dist",
     "test": "ava",
-    "test-coverage": "nyc yarn test"
+    "test-coverage": "nyc yarn test",
+    "benchmark": "node -r esm benchmark"
   },
   "author": {
     "name": "fisker Cheung",

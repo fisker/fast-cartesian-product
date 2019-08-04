@@ -8,8 +8,8 @@ before_script:
 script:
   - yarn lint
   - yarn build
+  - yarn benchmark
   - yarn test-coverage
-  # - yarn benchmarks
 after_script:
   - npm install --global coveralls
   - nyc report --reporter=text-lcov | coveralls
