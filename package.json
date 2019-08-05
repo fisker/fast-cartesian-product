@@ -76,7 +76,7 @@
     "lint:prettier": "prettier \"**/*.{css,html,js,json,less,md,scss,ts,vue,yaml,yml}\" --check",
     "release": "run-s clean build format test dist",
     "test": "ava",
-    "test-coverage": "nyc --reporter=lcov --reporter=text ava",
+    "test-coverage": "nyc ava",
     "benchmark": "node -r esm benchmark"
   },
   "author": {
@@ -86,7 +86,12 @@
   },
   "sideEffects": false,
   "nyc": {
+    "all": true,
     "require": "esm",
+    "reporter": [
+      "lcov",
+      "text"
+    ],
     "include": [
       "src/**"
     ]
