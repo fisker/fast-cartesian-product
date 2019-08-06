@@ -86,7 +86,6 @@
   },
   "sideEffects": false,
   "nyc": {
-    "all": true,
     "require": "esm",
     "reporter": [
       "lcov",
