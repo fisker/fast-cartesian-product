@@ -17,3 +17,4 @@ after_script:
   - cat ./coverage/lcov.info | codecov
   - cat ./coverage/lcov.info | codacy-coverage
   - yarn benchmark
+  - yarn benchmark2
