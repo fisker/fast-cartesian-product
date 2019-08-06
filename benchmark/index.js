@@ -1,25 +1,7 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import Benchmark from 'benchmark'
-import path from 'path'
-import fs from 'fs'
 import arrays from './sets'
-
-const directory = path.join(__dirname, '../src/algorithms')
-const files = fs.readdirSync(directory)
-
-const algorithms = [
-  ...files.map(file => {
-    const name = path
-      .basename(file, '.js')
-      .replace(/-/g, ' ')
-      .replace(/(^.)|\s./g, $0 => $0.toUpperCase())
-
-    return {
-      name,
-      fn: require(path.join(directory, file)).default,
-    }
-  }),
-]
+import algorithms from './algorithms'
 
 function alignAlgorithmNames(name) {
   const maxLength = Math.max(...algorithms.map(({name: {length}}) => length))
