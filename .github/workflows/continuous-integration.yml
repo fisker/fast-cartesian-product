@@ -72,25 +72,3 @@ jobs:
         uses: coverallsapp/github-action@master
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-
-  benchmark:
-    strategy:
-      fail-fast: false
-    name: Benchmark
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@master
-        with:
-          fetch-depth: 1
-
-      - name: Setup Node.js
-        uses: actions/setup-node@master
-        with:
-          node-version: 10.x
-
-      - name: Install Dependencies
-        run: yarn
-
-      - name: Run Lint
-        run: yarn benchmark2
