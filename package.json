@@ -29,7 +29,7 @@
     "@fisker/husky-config": "1.1.1",
     "@fisker/lint-staged-config": "1.0.5",
     "@fisker/prettier-config": "1.0.18",
-    "ava": "2.2.0",
+    "ava": "2.3.0",
     "babel-eslint": "10.0.2",
     "babel-plugin-transform-async-to-promises": "0.8.14",
     "benchmark": "2.1.4",
