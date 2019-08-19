@@ -35,7 +35,7 @@
     "benchmark": "2.1.4",
     "benchmarkify": "2.1.2",
     "cz-conventional-changelog": "3.0.2",
-    "eslint": "6.1.0",
+    "eslint": "6.2.0",
     "eslint-config-fisker": "4.5.0",
     "esm": "3.2.25",
     "husky": "3.0.3",
