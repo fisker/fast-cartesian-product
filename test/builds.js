@@ -1,5 +1,7 @@
 import path from 'path'
 import test from 'ava'
+import copyFile from 'cp-file'
+import rimraf from 'rimraf'
 import buildConfig from '../rollup.config'
 import tester from './helpers/tester'
 
@@ -15,7 +17,11 @@ const builds = []
 for (const {file, basename, format} of builds) {
   if (format === 'esm') {
     test(basename, async t => {
-      const {default: module_} = await import(file)
+      // https://github.com/standard-things/esm/issues/498
+      const temporaryFile = `${file}.esm.js`
+      await copyFile(file, temporaryFile)
+      const {default: module_} = await import(temporaryFile)
+      rimraf.sync(temporaryFile, {glob: false})
       tester(t, module_)
     })
   } else {
