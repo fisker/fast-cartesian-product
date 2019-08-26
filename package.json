@@ -36,7 +36,6 @@
     "cp-file": "7.0.0",
     "cz-conventional-changelog": "3.0.2",
     "eslint": "6.2.2",
-    "eslint-config-fisker": "4.5.0",
     "esm": "3.2.25",
     "husky": "3.0.4",
     "lint-staged": "9.2.4",
