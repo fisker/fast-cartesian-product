@@ -10,8 +10,6 @@
 module.exports = {
   root: true,
   env: {},
-  // https://github.com/eslint/eslint/issues/11486
-  parser: 'babel-eslint',
   parserOptions: {},
   extends: ['@fisker'],
   settings: {},
