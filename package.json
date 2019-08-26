@@ -63,6 +63,8 @@
     "lib"
   ],
   "scripts": {
+    "benchmark": "node -r esm benchmark",
+    "benchmark2": "node -r esm benchmark/benchmarkify.js",
     "build": "run-p build:*",
     "build:js": "rollup --config",
     "clean": "rimraf lib",
@@ -77,9 +79,7 @@
     "lint:prettier": "prettier \"**/*.{css,html,js,json,less,md,scss,ts,vue,yaml,yml}\" --check",
     "release": "run-s clean build format test dist",
     "test": "ava",
-    "test-coverage": "nyc ava",
-    "benchmark": "node -r esm benchmark",
-    "benchmark2": "node -r esm benchmark/benchmarkify.js"
+    "test-coverage": "nyc ava"
   },
   "author": {
     "name": "fisker Cheung",
