@@ -2,13 +2,12 @@ import babel from 'rollup-plugin-babel'
 import resolve from 'rollup-plugin-node-resolve'
 import cjs from 'rollup-plugin-commonjs'
 import rollupPrettier from 'rollup-plugin-prettier'
-import filesize from 'rollup-plugin-filesize'
 import {terser} from 'rollup-plugin-terser'
 import prettier from 'prettier'
 
 const prettierConfig = prettier.resolveConfig.sync('src/index.js')
 
-const commonPlugins = [resolve(), cjs(), babel(), filesize()]
+const commonPlugins = [resolve(), cjs(), babel()]
 
 const plugins = [
   ...commonPlugins,
@@ -27,14 +26,14 @@ const builds = {
   output: [
     // umd build
     {
-      file: 'lib/index.js',
+      file: 'dist/index.js',
       format: 'umd',
       name: moduleName,
       sourcemap: true,
     },
     // esm build
     {
-      file: 'lib/index.mjs',
+      file: 'dist/index.mjs',
       format: 'esm',
       sourcemap: true,
     },
