@@ -17,7 +17,10 @@ before `v1.0.0` this module was not focusing on speed, now it's split into to tw
 ```js
 import fastCartesianProduct from 'fast-cartesian-product'
 
-const inputs = [[0, 1], ['A', 'B']]
+const inputs = [
+  [0, 1],
+  ['A', 'B'],
+]
 
 console.log(fastCartesianProduct(inputs))
 // [ [ 0, 'A' ], [ 0, 'B' ], [ 1, 'A' ], [ 1, 'B' ] ]
