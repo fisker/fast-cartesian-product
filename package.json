@@ -1,6 +1,6 @@
 {
   "name": "fast-cartesian-product",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "fast cartesian product",
   "keywords": [
     "cartesian",
@@ -21,6 +21,7 @@
   ],
   "sideEffects": false,
   "main": "dist/index.js",
+  "jsdelivr": "dist/index.min.js",
   "unpkg": "dist/index.min.js",
   "module": "dist/index.mjs",
   "browser": "dist/index.min.js",
@@ -51,6 +52,23 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "ava": {
+    "helpers": [
+      "test/helpers/**"
+    ],
+    "require": "esm",
+    "verbose": true
+  },
+  "nyc": {
+    "include": [
+      "src/**"
+    ],
+    "reporter": [
+      "lcov",
+      "text"
+    ],
+    "require": "esm"
   },
   "devDependencies": {
     "@babel/core": "7.7.4",
@@ -90,23 +108,5 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
-  },
-  "ava": {
-    "verbose": true,
-    "require": "esm",
-    "helpers": [
-      "test/helpers/**"
-    ]
-  },
-  "jsdelivr": "dist/index.min.js",
-  "nyc": {
-    "require": "esm",
-    "reporter": [
-      "lcov",
-      "text"
-    ],
-    "include": [
-      "src/**"
-    ]
   }
 }
