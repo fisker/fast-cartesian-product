@@ -38,7 +38,7 @@ node -r esm examples/standard-52-card-deck.js
 ## Files
 
 ```text
-lib/
+dist/
 ├─ index.common.js  ( CommonJS )
 ├─ index.js         ( UMD )
 ├─ index.min.js     ( UMD, compressed )
