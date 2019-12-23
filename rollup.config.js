@@ -1,6 +1,6 @@
 import babel from 'rollup-plugin-babel'
 import resolve from '@rollup/plugin-node-resolve'
-import cjs from 'rollup-plugin-commonjs'
+import cjs from '@rollup/plugin-commonjs'
 import rollupPrettier from 'rollup-plugin-prettier'
 import {terser} from 'rollup-plugin-terser'
 import prettier from 'prettier'
