@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import test from 'ava'
-import tester from './helpers/tester'
+import tester from './_tester'
 
 const directory = path.join(__dirname, '../src/algorithms')
 

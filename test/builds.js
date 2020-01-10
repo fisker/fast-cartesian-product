@@ -3,7 +3,7 @@ import test from 'ava'
 import copyFile from 'cp-file'
 import del from 'del'
 import buildConfig from '../rollup.config'
-import tester from './helpers/tester'
+import tester from './_tester'
 
 // eslint-disable-next-line unicorn/prefer-flat-map
 const builds = []

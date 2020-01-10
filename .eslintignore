@@ -25,5 +25,3 @@ dist/**
 coverage/**
 
 # project glob
-# something wrong with dynamic import for `eslint-plugin-node`
-test/builds.js
