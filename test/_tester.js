@@ -55,7 +55,11 @@ const cases = [
 function tester(t, module_) {
   for (const {input, expected, throws} of cases) {
     if (throws) {
-      t.throws(() => module_(input), throws.constructor, throws.message)
+      t.throws(
+        () => module_(input),
+        {instanceOf: throws.constructor},
+        throws.message
+      )
     } else {
       t.deepEqual(module_(input), expected, JSON.stringify(input))
     }
