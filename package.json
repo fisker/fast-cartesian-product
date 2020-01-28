@@ -16,15 +16,15 @@
     "email": "lionkay@gmail.com",
     "url": "https://www.fiskercheung.com/"
   },
-  "files": [
-    "dist"
-  ],
   "sideEffects": false,
   "main": "dist/index.js",
   "jsdelivr": "dist/index.min.js",
   "unpkg": "dist/index.min.js",
   "module": "dist/index.mjs",
   "browser": "dist/index.min.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "benchmark": "node -r esm benchmark",
     "benchmark2": "node -r esm benchmark/benchmarkify.js",
@@ -102,7 +102,7 @@
     "rollup-plugin-babel": "4.3.3",
     "rollup-plugin-prettier": "0.6.0",
     "rollup-plugin-terser": "5.2.0",
-    "sort-package-json": "1.39.0"
+    "sort-package-json": "1.39.1"
   },
   "publishConfig": {
     "access": "public",
