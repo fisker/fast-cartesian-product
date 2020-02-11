@@ -7,8 +7,6 @@ on:
 
 jobs:
   benchmark:
-    strategy:
-      fail-fast: false
     name: Benchmark
     runs-on: ubuntu-latest
     steps:
@@ -20,7 +18,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@master
         with:
-          node-version: 10.x
+          node-version: "12"
 
       - name: Install Dependencies
         run: yarn
