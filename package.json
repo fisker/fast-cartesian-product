@@ -98,7 +98,7 @@
     "nyc": "15.0.0",
     "prettier": "1.19.1",
     "pretty-format": "25.1.0",
-    "rollup": "1.31.0",
+    "rollup": "1.31.1",
     "rollup-plugin-babel": "4.3.3",
     "rollup-plugin-prettier": "0.6.0",
     "rollup-plugin-terser": "5.2.0",
