@@ -85,7 +85,7 @@
     "babel-plugin-transform-async-to-promises": "0.8.15",
     "benchmark": "2.1.4",
     "benchmarkify": "2.1.2",
-    "cp-file": "7.0.0",
+    "cp-file": "8.0.1",
     "cz-conventional-changelog": "3.1.0",
     "del": "5.1.0",
     "del-cli": "3.0.0",
