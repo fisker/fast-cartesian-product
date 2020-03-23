@@ -23,7 +23,7 @@ for (const {title, sets} of arrays) {
     .on('cycle', ({target}) => {
       console.log(`- ${String(target)}`)
     })
-    .on('complete', function() {
+    .on('complete', function () {
       console.log()
       console.log(`> Fastest is ${this.filter('fastest').map('name')}`)
       console.log()

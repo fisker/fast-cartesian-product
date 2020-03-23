@@ -8,7 +8,7 @@ import tester from './_tester'
 // eslint-disable-next-line unicorn/prefer-flat-map
 const builds = []
   .concat(...buildConfig.map(({output}) => output))
-  .map(build => ({
+  .map((build) => ({
     ...build,
     basename: path.basename(build.file),
     file: path.join(__dirname, '..', build.file),
@@ -16,7 +16,7 @@ const builds = []
 
 for (const {file, basename, format} of builds) {
   if (format === 'esm') {
-    test(basename, async t => {
+    test(basename, async (t) => {
       // https://github.com/standard-things/esm/issues/498
       const temporaryFile = `${file}.esm.js`
       await copyFile(file, temporaryFile)
@@ -25,7 +25,7 @@ for (const {file, basename, format} of builds) {
       tester(t, module_)
     })
   } else {
-    test(basename, t => {
+    test(basename, (t) => {
       tester(t, require(file))
     })
   }

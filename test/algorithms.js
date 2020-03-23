@@ -6,7 +6,7 @@ import tester from './_tester'
 const directory = path.join(__dirname, '../src/algorithms')
 
 for (const file of fs.readdirSync(directory)) {
-  test(file, t => {
+  test(file, (t) => {
     const module_ = require(path.join(directory, file)).default
     tester(t, module_)
   })
