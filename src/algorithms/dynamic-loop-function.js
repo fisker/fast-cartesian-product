@@ -26,7 +26,7 @@ function makeProductFunction(setSize) {
     loopBody[
       setIndex
     ] = `for (var ${INDEX_PREFIX}${setIndex} = 0; ${INDEX_PREFIX}${setIndex} < ${LENGTH_PREFIX}${setIndex}; ${INDEX_PREFIX}${setIndex} += 1) {`
-    loopBody[loopLength - setIndex] = `}`
+    loopBody[loopLength - setIndex] = '}'
   }
   loopBody[setSize + 1] = `${RESULTS_NAME}.push([${resultBody.join(',')}])`
   lengthCheck = `if(${lengthCheck.join(
