@@ -80,7 +80,7 @@
     "@fisker/husky-config": "3.0.0",
     "@fisker/lint-staged-config": "2.2.0",
     "@fisker/prettier-config": "3.0.0",
-    "@rollup/plugin-commonjs": "13.0.1",
+    "@rollup/plugin-commonjs": "13.0.2",
     "@rollup/plugin-node-resolve": "8.4.0",
     "ava": "3.10.1",
     "babel-plugin-transform-async-to-promises": "0.8.15",
