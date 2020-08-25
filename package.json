@@ -82,7 +82,7 @@
     "@fisker/prettier-config": "3.1.0",
     "@rollup/plugin-commonjs": "15.0.0",
     "@rollup/plugin-node-resolve": "9.0.0",
-    "ava": "3.11.1",
+    "ava": "3.12.1",
     "babel-plugin-transform-async-to-promises": "0.8.15",
     "benchmark": "2.1.4",
     "benchmarkify": "2.1.2",
