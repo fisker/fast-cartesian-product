@@ -85,7 +85,7 @@
     "ava": "3.13.0",
     "babel-plugin-transform-async-to-promises": "0.8.15",
     "benchmark": "2.1.4",
-    "benchmarkify": "2.1.2",
+    "benchmarkify": "2.1.3",
     "cp-file": "9.0.0",
     "cz-conventional-changelog": "3.3.0",
     "del": "6.0.0",
