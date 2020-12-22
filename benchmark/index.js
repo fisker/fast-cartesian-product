@@ -16,8 +16,12 @@ for (const {title, sets} of arrays) {
   console.log()
   algorithms
     .reduce(
-      (suite, {name, fn}) =>
-        suite.add(alignAlgorithmNames(name), () => fn(sets), benchmarkOptions),
+      (suite, {name, fn: function_}) =>
+        suite.add(
+          alignAlgorithmNames(name),
+          () => function_(sets),
+          benchmarkOptions
+        ),
       new Benchmark.Suite()
     )
     .on('cycle', ({target}) => {

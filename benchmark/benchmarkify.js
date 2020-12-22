@@ -7,9 +7,9 @@ const benchmark = new Benchmarkify('Cartesian product algorithms')
 const suites = arrays.map(({title, sets}) => {
   const bench = benchmark.createSuite(title)
 
-  for (const {name, fn} of algorithms) {
+  for (const {name, fn: function_} of algorithms) {
     bench.add(name, () => {
-      fn(sets)
+      function_(sets)
     })
   }
 
