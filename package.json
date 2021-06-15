@@ -89,7 +89,7 @@
     "cp-file": "9.1.0",
     "cz-conventional-changelog": "3.3.0",
     "del": "6.0.0",
-    "del-cli": "3.0.1",
+    "del-cli": "4.0.0",
     "eslint": "7.28.0",
     "esm": "3.2.25",
     "husky": "6.0.0",
