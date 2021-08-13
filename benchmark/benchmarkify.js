@@ -1,7 +1,6 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 import Benchmarkify from 'benchmarkify'
-import arrays from './sets'
-import algorithms from './algorithms'
+import arrays from './sets.js'
+import algorithms from './algorithms.js'
 
 const benchmark = new Benchmarkify('Cartesian product algorithms')
 const suites = arrays.map(({title, sets}) => {

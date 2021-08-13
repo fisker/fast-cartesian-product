@@ -39,9 +39,9 @@ node -r esm examples/standard-52-card-deck.js
 
 ```text
 dist/
-├─ index.common.js  ( CommonJS )
 ├─ index.js         ( UMD )
 ├─ index.min.js     ( UMD, compressed )
+├─ index.cjs        ( CommonJS )
 ├─ index.mjs        ( ES Module )
 └─ index.min.mjs    ( ES Module, compressed )
 ```

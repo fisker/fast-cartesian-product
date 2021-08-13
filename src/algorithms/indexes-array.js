@@ -3,9 +3,9 @@ function product(sets) {
   const combinations = []
 
   let done = setsSize === 0
-  const indexes = new Array(setsSize)
+  const indexes = Array.from({length: setsSize})
   while (!done) {
-    const combination = indexes.slice()
+    const combination = [...indexes]
 
     done = true
 

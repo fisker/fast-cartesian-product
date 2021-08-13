@@ -6,7 +6,7 @@ function product(sets) {
   let index = 0
 
   while (!done) {
-    const combination = new Array(setsSize)
+    const combination = Array.from({length: setsSize})
 
     let indexRemaining = index
     done = true

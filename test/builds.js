@@ -1,13 +1,17 @@
-import path from 'path'
+import path from 'node:path'
 import test from 'ava'
 import copyFile from 'cp-file'
 import del from 'del'
-import buildConfig from '../rollup.config'
-import tester from './_tester'
+import createEsmUtils from 'esm-utils'
+import {pathToFileURL} from 'node:url'
+import tempy from 'tempy'
+import buildConfig from '../rollup.config.js'
+import tester from './_tester.js'
 
-// eslint-disable-next-line unicorn/prefer-flat-map
-const builds = []
-  .concat(...buildConfig.map(({output}) => output))
+const {__dirname, require} = createEsmUtils(import.meta)
+
+const builds = buildConfig
+  .flatMap(({output}) => output)
   .map((build) => ({
     ...build,
     basename: path.basename(build.file),
@@ -15,18 +19,20 @@ const builds = []
   }))
 
 for (const {file, basename, format} of builds) {
-  if (format === 'esm') {
-    test(basename, async (t) => {
-      // https://github.com/standard-things/esm/issues/498
-      const temporaryFile = `${file}.esm.js`
-      await copyFile(file, temporaryFile)
-      const {default: module_} = await import(temporaryFile)
-      del.sync(temporaryFile, {glob: false})
-      tester(t, module_)
+  if (format === 'umd') {
+    const temporaryFile = tempy.file({extension: 'js'})
+    // eslint-disable-next-line no-await-in-loop
+    await copyFile(file, temporaryFile)
+    const module = require(temporaryFile)
+    // eslint-disable-next-line no-await-in-loop
+    await del(temporaryFile, {glob: false, force: true})
+    test(basename, (t) => {
+      tester(t, module)
     })
   } else {
-    test(basename, (t) => {
-      tester(t, require(file))
+    test(basename, async (t) => {
+      const {default: module_} = await import(pathToFileURL(file))
+      tester(t, module_)
     })
   }
 }

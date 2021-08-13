@@ -6,12 +6,12 @@ const LENGTH_PREFIX = 'length'
 const INDEX_PREFIX = 'index'
 
 function makeProductFunction(setSize) {
-  const elementsCache = new Array(setSize)
-  const lengthCache = new Array(setSize)
+  const elementsCache = Array.from({length: setSize})
+  const lengthCache = Array.from({length: setSize})
   const loopLength = setSize * 2 + 1
-  const loopBody = new Array(loopLength)
-  const resultBody = new Array(setSize)
-  let lengthCheck = new Array(setSize)
+  const loopBody = Array.from({length: loopLength})
+  const resultBody = Array.from({length: setSize})
+  let lengthCheck = Array.from({length: setSize})
   for (let setIndex = 0; setIndex < setSize; setIndex += 1) {
     elementsCache[
       setIndex
