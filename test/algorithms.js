@@ -1,8 +1,8 @@
 import fs from 'node:fs/promises'
 import path from 'node:path'
+import {pathToFileURL} from 'node:url'
 import test from 'ava'
 import createEsmUtils from 'esm-utils'
-import {pathToFileURL} from 'node:url'
 import tester from './_tester.js'
 
 const {__dirname} = createEsmUtils(import.meta)
