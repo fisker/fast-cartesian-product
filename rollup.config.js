@@ -36,6 +36,7 @@ const builds = {
       file: 'dist/index.cjs',
       format: 'cjs',
       sourcemap: true,
+      exports: 'default',
     },
     // esm build
     {
