@@ -20,7 +20,6 @@ jobs:
         node_version:
           - "16"
           - "14"
-          - "12"
         # exclude:
         #   - os: "macos-latest"
         #     node_version: "12"
