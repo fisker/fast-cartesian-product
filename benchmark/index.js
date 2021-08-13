@@ -1,7 +1,6 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 import Benchmark from 'benchmark'
-import arrays from './sets'
-import algorithms from './algorithms'
+import arrays from './sets.js'
+import algorithms from './algorithms.js'
 
 function alignAlgorithmNames(name) {
   const maxLength = Math.max(...algorithms.map(({name: {length}}) => length))

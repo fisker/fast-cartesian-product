@@ -1,11 +1,11 @@
-import path from 'path'
-import fs from 'fs'
+import path from 'node:path'
+import fs from 'node:fs/promises'
 
-const directory = path.join(__dirname, '../src/algorithms')
-const files = fs.readdirSync(directory)
+const directory = new URL('../src/algorithms/', import.meta.url)
+const files = await fs.readdir(directory)
 
-const algorithms = [
-  ...files.map((file) => {
+const algorithms = await Promise.all(
+  files.map(async (file) => {
     const name = path
       .basename(file, '.js')
       .replace(/-/g, ' ')
@@ -13,9 +13,9 @@ const algorithms = [
 
     return {
       name,
-      fn: require(path.join(directory, file)).default,
+      fn: (await import(new URL(file, directory))).default,
     }
-  }),
-]
+  })
+)
 
 export default algorithms

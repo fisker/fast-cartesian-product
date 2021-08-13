@@ -31,6 +31,12 @@ const builds = {
       name: moduleName,
       sourcemap: true,
     },
+    // cjs build
+    {
+      file: 'dist/index.cjs',
+      format: 'cjs',
+      sourcemap: true,
+    },
     // esm build
     {
       file: 'dist/index.mjs',

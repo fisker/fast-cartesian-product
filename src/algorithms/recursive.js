@@ -6,7 +6,7 @@ function product(sets) {
   }
 
   const combinations = []
-  const combination = new Array(setsSize)
+  const combination = Array.from({length: setsSize})
 
   return (function setElement(setsIndex) {
     const elements = sets[setsIndex]
@@ -29,7 +29,7 @@ function product(sets) {
       if (isLastSets) {
         // TODO: check is last one
         // combinations.push(done ? combination : combination.slice())
-        combinations.push(combination.slice())
+        combinations.push([...combination])
       } else {
         setElement(setsIndex + 1)
       }

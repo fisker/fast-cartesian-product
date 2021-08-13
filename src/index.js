@@ -1,1 +1,1 @@
-export {default} from './algorithms/calculate-from-index'
+export {default} from './algorithms/calculate-from-index.js'

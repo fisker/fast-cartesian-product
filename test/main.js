@@ -1,7 +1,6 @@
 import test from 'ava'
-import tester from './_tester'
-
-import fastCartesianProduct from '../src/algorithms/recursive'
+import fastCartesianProduct from '../src/algorithms/recursive.js'
+import tester from './_tester.js'
 
 test('src', (t) => {
   tester(t, fastCartesianProduct)
