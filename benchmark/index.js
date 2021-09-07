@@ -19,9 +19,9 @@ for (const {title, sets} of arrays) {
         suite.add(
           alignAlgorithmNames(name),
           () => function_(sets),
-          benchmarkOptions
+          benchmarkOptions,
         ),
-      new Benchmark.Suite()
+      new Benchmark.Suite(),
     )
     .on('cycle', ({target}) => {
       console.log(`- ${String(target)}`)

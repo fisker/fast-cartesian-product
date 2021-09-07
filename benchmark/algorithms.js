@@ -15,7 +15,7 @@ const algorithms = await Promise.all(
       name,
       fn: (await import(new URL(file, directory))).default,
     }
-  })
+  }),
 )
 
 export default algorithms

@@ -58,7 +58,7 @@ function tester(t, module_) {
       t.throws(
         () => module_(input),
         {instanceOf: throws.constructor},
-        throws.message
+        throws.message,
       )
     } else {
       t.deepEqual(module_(input), expected, JSON.stringify(input))

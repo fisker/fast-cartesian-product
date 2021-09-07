@@ -15,7 +15,7 @@ function random(low, high) {
 function makeArray(width, height = 'random') {
   if (height === 'random') {
     const sets = Array.from({length: width}, () =>
-      Array.from({length: random(1, 8)}, fillArray)
+      Array.from({length: random(1, 8)}, fillArray),
     )
     const title = `sets with random length: [${sets
       .map(({length}) => length)
@@ -30,7 +30,7 @@ function makeArray(width, height = 'random') {
   return {
     title: `sets: ${width}x${height}`,
     sets: Array.from({length: width}, () =>
-      Array.from({length: height}, fillArray)
+      Array.from({length: height}, fillArray),
     ),
   }
 }

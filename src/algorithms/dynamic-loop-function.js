@@ -30,7 +30,7 @@ function makeProductFunction(setSize) {
   }
   loopBody[setSize + 1] = `${RESULTS_NAME}.push([${resultBody.join(',')}])`
   lengthCheck = `if(${lengthCheck.join(
-    ' || '
+    ' || ',
   )}) {throw new TypeError('\`sets\` should not has empty elements')}`
 
   const functionBody = [
