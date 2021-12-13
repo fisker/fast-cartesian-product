@@ -10,11 +10,11 @@ const algorithms = await Promise.all(
       .basename(file, '.js')
       .replace(/-/g, ' ')
       .replace(/(^.)|\s./g, ($0) => $0.toUpperCase())
-    const {default: fn} =await import(new URL(file, directory))
+    const {default: function_} = await import(new URL(file, directory))
 
     return {
       name,
-      fn,
+      fn: function_,
     }
   }),
 )
