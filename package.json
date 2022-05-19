@@ -77,7 +77,7 @@
   "devDependencies": {
     "@babel/core": "7.17.9",
     "@babel/plugin-proposal-class-properties": "7.16.7",
-    "@babel/preset-env": "7.16.11",
+    "@babel/preset-env": "7.18.0",
     "@commitlint/cli": "16.2.4",
     "@fisker/commitlint-config": "2.0.4",
     "@fisker/eslint-config": "10.1.4",
