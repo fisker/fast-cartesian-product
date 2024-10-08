@@ -92,7 +92,7 @@
     "benchmarkify": "3.0.0",
     "cp-file": "10.0.0",
     "cz-conventional-changelog": "3.3.0",
-    "del": "7.0.0",
+    "del": "8.0.0",
     "del-cli": "5.0.0",
     "eslint": "8.27.0",
     "esm-utils": "4.1.0",
